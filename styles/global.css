@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap");
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color: #f1f1f1;
+  --color-primary: #C3AED6;
+  --color-secondary: #f5f5f5;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: var(--color-primary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 4rem;
+  width: 100%;
+}
+
+header .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header-container nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+header .header-container nav .nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+}
+
+header .header-container nav .nav-container:hover, header .header-container nav .nav-container:focus {
+  border-bottom: 5px solid white;
+}
+
+header .header-container nav .nav-container:hover a, header .header-container nav .nav-container:focus a {
+  color: white;
+}
+
+header .header-container nav .nav-container.active a {
+  color: white;
+}
+
+header .header-container nav a {
+  width: 4rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+}
+
+header .header-container .fa-adjust {
+  width: 2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=global.css.map */
