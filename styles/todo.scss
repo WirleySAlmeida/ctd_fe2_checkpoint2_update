@@ -1,0 +1,253 @@
+main {
+    padding: 1rem 0.8rem 2rem 0.8rem;
+    text-align: center;
+
+    h1 {
+        padding: 1rem 0;
+        margin: 1.5rem 0;
+        background-color: var(--color-primary);
+        color: white;
+        font-size: 1.6rem;
+        border-radius: 1rem;
+        box-shadow: 4px 4px 18px 1px rgba(82,82,82,0.8);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        background-color: var(--color-primary);
+        gap: 1rem;
+        padding: 2rem 3rem;
+        box-shadow: 4px 4px 18px 1px rgba(82,82,82,0.8);
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            label {
+                font-size: 1.2em;
+                font-weight: 500;
+                color: white;
+                margin-bottom: 0.5rem;
+            }
+            input {
+                width: 16rem;
+                padding: 0.8rem;
+                border-radius: 0.5rem;
+                border: none;
+            }
+        }
+
+        #submit {
+            margin-top: 1rem;
+            width: 16rem;
+            padding: 0.6rem 0.8rem;
+            border-radius: 0.5rem;
+            border: none;
+            background-color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 200ms ease-in-out;
+
+            &:hover, &:focus {
+                transform: scale(1.05);
+                background-color: var(--color-secondary);
+            }
+        }
+    }
+
+    .cards-container {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            box-shadow: 4px 4px 18px 1px rgba(82,82,82,0.8);
+            background-color: var(--color-primary);
+            padding: 1rem;
+
+            .options {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+
+                .custom-checkbox {
+                    position: relative;
+                    border-radius: 50%;
+                    background-color: white;
+                    width: 2rem;
+                    height: 2rem;
+                    cursor: pointer;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        opacity: 0;
+                        background-color: var(--color-secondary);
+                        top: 0.2rem;
+                        left: 0.2rem;
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        border-radius: 50%;
+                    }
+                }
+
+                .custom-checkbox.checked {
+                    position: relative;
+                    border-radius: 50%;
+                    background-color: white;
+                    width: 2rem;
+                    height: 2rem;
+                    cursor: pointer;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        opacity: 1;
+                        background-color: var(--color-secondary);
+                        top: 0.2rem;
+                        left: 0.2rem;
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        border-radius: 50%;
+                    }
+                }
+
+                .fa-trash-alt {
+                    width: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+
+            h2 {
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: white;
+            }
+
+            .card-date {
+                margin-top: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.8rem;
+                color: black;
+
+                p {
+                    background-color: white;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        padding: 1rem 1.6rem 2rem 1.6rem;
+        form {
+            padding: 2rem 3rem;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                label {
+                    font-size: 1.4em;
+                    font-weight: 500;
+                    color: white;
+                    margin-bottom: 0.5rem;
+                }
+                input {
+                    width: 34rem;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    border: none;
+                }
+            }
+
+            #submit {
+                margin-top: 1rem;
+                width: 34rem;
+                padding: 0.8rem 1rem;
+                border-radius: 0.5rem;
+                border: none;
+                background-color: white;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 200ms ease-in-out;
+
+                &:hover, &:focus {
+                    transform: scale(1.05);
+                    background-color: var(--color-secondary);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    :root{
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 1rem 1.6rem 2rem 1.6rem;
+        form {
+            padding: 2rem 3rem;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                label {
+                    font-size: 1.4em;
+                    font-weight: 500;
+                    color: white;
+                    margin-bottom: 0.5rem;
+                }
+                input {
+                    width: 34rem;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    border: none;
+                }
+            }
+
+            #submit {
+                margin-top: 1rem;
+                width: 34rem;
+                padding: 0.8rem 1rem;
+                border-radius: 0.5rem;
+                border: none;
+                background-color: white;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 200ms ease-in-out;
+
+                &:hover, &:focus {
+                    transform: scale(1.05);
+                    background-color: var(--color-secondary);
+                }
+            }
+        }
+    }
+}
