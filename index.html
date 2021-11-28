@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/todo.css">
+    <link href="js\darkMode.js" defer>
 
 </head>
 <body>
@@ -31,14 +32,16 @@
     </header>
     <main>
         <h1>Tarefas</h1>
-        <form action="">
+        <form action="" name="formulario" onSubmit="return enviardados();" >
             <div>
                 <label for="title">Descrição</label>
-                <input type="text" name="title" id="title" placeholder="Descrição da tarefa">
+                <input type="text" name="title" id="title" placeholder="Descrição da tarefa" >
+                
             </div>
             <div>
                 <label for="dueDate">Data Limite</label>
-                <input type="date" name="dueDate" id="dueDate">
+                <input type="date" name="dueDate" id="dueDate" >
+                
             </div>
             <input type="submit" id="submit" value="Criar tarefa">
         </form>
@@ -74,6 +77,34 @@
                 </div>
             </div>
         </div>
+
+        <script>
+
+            function enviardados(){
+                if (document.formulario.title.value == "" || 
+                document.formulario.title.value.length < 10 ){
+                    alert( "Preencha campo Descrição corretamente. O campo deve ter no mínimo 10 caracteres!" );
+                    document.formulario.title.focus();
+                    return false;
+                }
+
+                if (document.formulario.dueDate.value == ""){
+                    alert( "Preencha a Data corretamente!" );
+                    document.formulario.dueDate.focus();
+                    return false
+                }
+        }
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+        <script>
+            function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+            window.addEventListener('load', addDarkmodeWidget);
+        </script>
+
+
     </main>
 </body>
 </html>
