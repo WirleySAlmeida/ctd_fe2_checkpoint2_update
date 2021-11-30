@@ -32,69 +32,20 @@
     </header>
     <main>
         <h1>Tarefas</h1>
-        <form action="" name="formulario" onSubmit="return enviardados();" >
+        <form action="">
             <div>
                 <label for="title">Descrição</label>
                 <input type="text" name="title" id="title" placeholder="Descrição da tarefa" >
-                
             </div>
             <div>
                 <label for="dueDate">Data Limite</label>
-                <input type="date" name="dueDate" id="dueDate" >
-                
+                <input type="date" name="dueDate" id="dueDate" >               
             </div>
             <input type="submit" id="submit" value="Criar tarefa">
         </form>
-        <div class="cards-container">
-            <div class="card">
-                <div class="options">
-                    <div class="custom-checkbox"></div>
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" class="svg-inline--fa fa-trash-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path>
-                    </svg>
-                </div>
-                <div class="card-header">
-                    <h2>Tarefa 01</h2>
-                </div>
-                <div class="card-date">
-                    <p>Criada em: 24/11/2021</p>
-                    <p>Limite: 26/11/2021</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="options">
-                    <div class="custom-checkbox checked"></div>
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" class="svg-inline--fa fa-trash-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path>
-                    </svg>
-                </div>
-                <div class="card-header">
-                    <h2>Tarefa Estupidamente estúpida, loucura, loucrua</h2>
-                </div>
-                <div class="card-date">
-                    <p>Criada em: 24/11/2021</p>
-                    <p>Limite: 26/11/2021</p>
-                </div>
-            </div>
+        <div class="cards-container">            
+            
         </div>
-
-        <script>
-
-            function enviardados(){
-                if (document.formulario.title.value == "" || 
-                document.formulario.title.value.length < 10 ){
-                    alert( "Preencha campo Descrição corretamente. O campo deve ter no mínimo 10 caracteres!" );
-                    document.formulario.title.focus();
-                    return false;
-                }
-
-                if (document.formulario.dueDate.value == ""){
-                    alert( "Preencha a Data corretamente!" );
-                    document.formulario.dueDate.focus();
-                    return false
-                }
-        }
-        </script>
 
         <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
         <script>
@@ -104,6 +55,7 @@
             window.addEventListener('load', addDarkmodeWidget);
         </script>
 
+        <script src="./js/script.js"></script>
 
     </main>
 </body>
