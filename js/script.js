@@ -1,15 +1,17 @@
-let title = document.getElementById('title');
-let dueDate = document.getElementById('dueDate');
-let submit = document.getElementById('submit');
-let cardsContainer = document.querySelector('.cards-container');
+const title = document.getElementById('title');
+const currDate = document.getElementById('currDate');
+const dueDate = document.getElementById('dueDate');
+const submit = document.getElementById('submit');
+const cardsContainer = document.querySelector('.cards-container');
 
 const d = new Date();
 const day = d.getDate();
 const month = d.getMonth()+1;
 const year = d.getFullYear(); 
-const dateString = d.toISOString();
+const dateString = d.toISOString().slice(0,10);
 
-dueDate.setAttribute('min',`${dateString.slice(0,10)}`);
+currDate.setAttribute('value',`${dateString}`)
+dueDate.setAttribute('min',`${dateString}`);
 
 function enviarDados(){
     let erros = [];
