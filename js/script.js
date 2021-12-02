@@ -66,7 +66,9 @@ cardsContainer.addEventListener('click', (evento) => {
     let elemento = evento.target;
     let paiDoElemento = elemento.parentNode;
 
-    elemento.classList.toggle('checked');
+    if (elemento.classList.contains('custom-checkbox')){
+        elemento.classList.toggle('checked');
+    }
 
     if (elemento.classList.contains('svg-inline--fa')){
         let excluirAnotacao = confirm("Deseja excluir a anotação?");
