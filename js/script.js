@@ -2,7 +2,14 @@ let title = document.getElementById('title');
 let dueDate = document.getElementById('dueDate');
 let submit = document.getElementById('submit');
 let cardsContainer = document.querySelector('.cards-container');
-let d = new Date();
+
+const d = new Date();
+const day = d.getDate();
+const month = d.getMonth()+1;
+const year = d.getFullYear(); 
+const dateString = d.toISOString();
+
+dueDate.setAttribute('min',`${dateString.slice(0,10)}`);
 
 function enviarDados(){
     let erros = [];
@@ -18,11 +25,7 @@ function enviarDados(){
         erros.push("");
     }
 
-    if (erros.length > 0){
-        return false;
-    } else{
-        return true;
-    }
+    return (erros.length > 0 ? false : true);
 }
 
 function criaCard(elementoPai) {
@@ -38,8 +41,8 @@ function criaCard(elementoPai) {
                 <h2>${title.value}</h2>
             </div>
             <div class="card-date">
-                <p>Criada em: ${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}</p>
-                <p>Limite: ${dueDate.value.slice(8)}/${dueDate.value.slice(5, 7)}/${dueDate.value.slice(0, 4)}</p>
+                <p>Criada em: ${day}/${month}/${year}</p>
+                <p>Limite: ${dueDate.value.slice(8)}/${dueDate.value.slice(5,7)}/${dueDate.value.slice(0,4)}</p>
             </div>
         </div>
     `;
@@ -63,9 +66,7 @@ cardsContainer.addEventListener('click', (evento) => {
     let elemento = evento.target;
     let paiDoElemento = elemento.parentNode;
 
-    if (elemento.classList.contains('custom-checkbox')){
-        elemento.classList.add('checked');
-    }
+    elemento.classList.toggle('checked');
 
     if (elemento.classList.contains('svg-inline--fa')){
         let excluirAnotacao = confirm("Deseja excluir a anotação?");
