@@ -5,7 +5,6 @@ let cardsContainer = document.querySelector('.cards-container');
 
 const d = new Date();
 const day = d.getDate();
-console.log(d.toString().getDate());
 const month = d.getMonth()+1;
 const year = d.getFullYear(); 
 const dateString = d.toISOString();
@@ -77,10 +76,10 @@ cardsContainer.addEventListener('click', (evento) => {
         }
     }
 
-    if (elemento.classList.contains('svg-inline--fa')){
+    if (elemento.localName === 'path' || elemento.classList.contains('svg-inline--fa')){
         let excluirAnotacao = confirm("Deseja excluir a anotação?");
         if (excluirAnotacao){
-            cardsContainer.removeChild(paiDoElemento.parentNode);
+            cardsContainer.removeChild(cardsContainer.firstElementChild);
         }
     }
 })
