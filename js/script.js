@@ -5,6 +5,7 @@ let cardsContainer = document.querySelector('.cards-container');
 
 const d = new Date();
 const day = d.getDate();
+console.log(d.toString().getDate());
 const month = d.getMonth()+1;
 const year = d.getFullYear(); 
 const dateString = d.toISOString();
@@ -68,6 +69,12 @@ cardsContainer.addEventListener('click', (evento) => {
 
     if (elemento.classList.contains('custom-checkbox')){
         elemento.classList.toggle('checked');
+        const cardHeader = paiDoElemento.parentNode.querySelector('h2');
+        if (elemento.classList.contains('checked')){
+            cardHeader.style.textDecoration = 'line-through';
+        } else{
+            cardHeader.style.textDecoration = 'none';
+        }
     }
 
     if (elemento.classList.contains('svg-inline--fa')){
