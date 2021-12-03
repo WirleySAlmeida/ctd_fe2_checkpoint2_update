@@ -181,8 +181,16 @@ main .cards-container .card .options .fa-trash-alt {
 main .cards-container .card h2 {
   margin-top: 0.5rem;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 400;
   color: white;
+}
+
+main .cards-container .card h2.completed {
+  text-decoration: line-through;
+}
+
+main .cards-container .card h2.todo {
+  font-weight: 800;
 }
 
 main .cards-container .card .card-date {

@@ -1,2 +1,5 @@
-import Darkmode from 'darkmode-js';
-new Darkmode().showWidget();
+function addDarkmodeWidget() {
+    new Darkmode().showWidget();
+}
+
+window.addEventListener('load', addDarkmodeWidget);
