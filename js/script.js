@@ -8,10 +8,13 @@ const d = new Date();
 const day = d.getDate();
 const month = d.getMonth()+1;
 const year = d.getFullYear(); 
-const dateString = d.toISOString().slice(0,10);
 
-currDate.setAttribute('value',`${dateString}`)
-dueDate.setAttribute('min',`${dateString}`);
+const dayString = d.toLocaleDateString().slice(0,2);
+const monthString = d.toLocaleDateString().slice(3,5);
+const yearString = d.toLocaleDateString().slice(6,10);
+
+currDate.setAttribute('value',`${yearString}-${monthString}-${dayString}`);
+dueDate.setAttribute('min',`${yearString}-${monthString}-${dayString}`);
 
 function enviarDados(){
     let erros = [];
