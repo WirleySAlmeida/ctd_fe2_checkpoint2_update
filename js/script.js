@@ -4,17 +4,8 @@ const dueDate = document.getElementById('dueDate');
 const submit = document.getElementById('submit');
 const cardsContainer = document.querySelector('.cards-container');
 
-const d = new Date();
-const day = d.getDate();
-const month = d.getMonth()+1;
-const year = d.getFullYear(); 
-
-const dayString = d.toLocaleDateString().slice(0,2);
-const monthString = d.toLocaleDateString().slice(3,5);
-const yearString = d.toLocaleDateString().slice(6,10);
-
-currDate.setAttribute('value',`${yearString}-${monthString}-${dayString}`);
-dueDate.setAttribute('min',`${yearString}-${monthString}-${dayString}`);
+currDate.setAttribute('value',`${dayjs().format('YYYY-MM-DD')}`);
+dueDate.setAttribute('min',`${dayjs().format('YYYY-MM-DD')}`);
 
 function enviarDados(){
     let erros = [];
@@ -46,8 +37,8 @@ function criaCard(elementoPai) {
                 <h2>${title.value}</h2>
             </div>
             <div class="card-date">
-                <p>Criada em: ${day}/${month}/${year}</p>
-                <p>Limite: ${dueDate.value.slice(8)}/${dueDate.value.slice(5,7)}/${dueDate.value.slice(0,4)}</p>
+                <p>Criada em: ${dayjs().format('DD/MM/YYYY')}</p>
+                <p>Limite: ${dayjs(dueDate.value).format('DD/MM/YYYY')}</p>
             </div>
         </div>
     `;
