@@ -7,15 +7,27 @@ let d = new Date();
 function enviarDados(){
     let erros = [];
     if (title.value == "" || title.value.length < 10 ){
-        alert( "Preencha campo Descrição corretamente. O campo deve ter no mínimo 10 caracteres!" );
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'A descrição deve ter no mínimo 10 caracteres',
+        })
         title.focus();
         erros.push("");
-    }
-
-    if (dueDate.value == ""){
-        alert( "Preencha a Data corretamente!" );
+    }else if (dueDate.value == ""){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Insira a Data',
+        })
         dueDate.focus();
         erros.push("");
+    }else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Tudo Certo',
+            text: 'A tarefa foi criada com sucesso',
+        })
     }
 
     if (erros.length > 0){
