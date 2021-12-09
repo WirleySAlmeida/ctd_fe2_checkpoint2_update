@@ -7,6 +7,26 @@ const cardsContainer = document.querySelector('.cards-container');
 currDate.setAttribute('value',`${dayjs().format('YYYY-MM-DD')}`);
 dueDate.setAttribute('min',`${dayjs().format('YYYY-MM-DD')}`);
 
+var textWrapper = document.querySelector('.animation');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+    .add({
+        targets: '.animation .letter',
+        scale: [4,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: (el, i) => 70*i
+    }).add({
+        targets: '.animation',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
+
 function enviarDados(){
     let erros = [];
     if (title.value == "" || title.value.length < 10 ){
